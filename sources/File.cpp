@@ -33,7 +33,7 @@ std::vector<string> File::sort_account_name() {
   std::vector<string> accounts_name;
   for(auto & account : accounts_all){
     if(!account.get_account_name().empty())
-      accounts_name.push_back(account.get_account_name());
+      accounts_name.emplace_back(account.get_account_name());
   }
   std::sort(accounts_name.begin(), accounts_name.end());
   return accounts_name;
